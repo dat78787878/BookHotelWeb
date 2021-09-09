@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "HotelDialog";
+}
+<link href="~/Content/CSS/css1/dialog.css" rel="stylesheet"/>
+<div class="h-dialog h-hide-dialog" id="dialog">
+    <div class="h-dialog-model"></div>
+    <div class="h-dialog-detail">
+        <div class="h-dialog-header">
+            <div class="h-text">
+                Hotel information
+            </div>
+            <div class="h-close">X</div>
+        </div>
+        <div class="h-dialog-content">
+            <div class="h-col h-dialog-col1">
+                <div class="h-row h-row1">
+                    <label>Hotel Name</label>
+                    <input id="inputName" class="input" type="text" name="hotelName" value="" />
+                </div>
+                <div class="h-row h-row2">
+                    <label>Hotel Address</label>
+                    <input id="inputAddress" class="input" type="text" name="hotelAddress" value="" />
+                </div>
+            </div>
+            <div class="h-col h-dialog-col2">
+                <div class="h-row h-row1">
+                    <label>Evaluate</label>
+                    <input class="input" type="text" name="evaluate" value="" />
+                </div>
+                <div class="h-row h-row2">
+                    <label>Hotel Address</label>
+                    <input class="input" type="text" name="hotelAddress" value="" />
+                </div>
+            </div>
+        </div>
+        <div class="h-dialog-footer">
+            <div class="btn-footer btn-cancel">Hủy</div>
+            <div class="btn-footer btn-save">Lưu</div>
+        </div>
+    </div>
+
+</div>

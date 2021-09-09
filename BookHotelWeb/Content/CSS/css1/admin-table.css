@@ -1,0 +1,21 @@
+﻿.h-action{
+    display:flex;
+}
+.h-edit{
+
+}
+.h-icon{
+    background-size:20px;
+    background-repeat:no-repeat;
+    width:20px;
+    height:20px;
+}
+.h-icon-edit{
+    background-image:url('/Content/images/edit.png');
+}
+.h-delete{
+
+}
+.h-icon-delete {
+    background-image: url('/Content/images/delete.png')
+}

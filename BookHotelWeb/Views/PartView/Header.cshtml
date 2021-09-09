@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Header";
+    var User = Session["Username"];
+}
+@using BookHotelWeb.Models
+<div class="header">
+    <div class="l-navbar">
+        <img src="~/Content/images/bookhotel.png" style="height:100px;margin-top:-24px;margin-left:10%"/>
+        <div style="color: green;"><a href="/Home">Trang chủ</a></div>
+    </div>
+    <div class="l-navbar" style="margin-left: 260px;">
+
+        @if (Session["Username"] == null)
+        {
+            <div class="navbar-login"><a style="position:absolute;right:17%" href="/Register/Index">Đăng ký</a></div>
+            <div class="dang-nhap">
+                <a style="position:absolute;right:7%" href="/Login/Index">Đăng Nhập</a>
+            </div>
+        }
+        else
+        {
+            <div class="dang-nhap">
+                <label style="position:absolute;right:17%">Chào @User!</label>
+                <a style="position:absolute;right:7%" href="/Login/Logout">Đăng Xuất</a>
+                <a style="position:absolute;right:32%" href="/Payment/HistoryBooking">Lịch sử đặt phòng</a>
+            </div>
+        }
+    </div>
+</div>

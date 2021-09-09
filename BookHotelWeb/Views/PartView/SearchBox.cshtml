@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "SearchBox";
+}
+<div class="left-title">
+    <span>Tin cậy về chất lượng-Uy tín về giá</span>
+</div>
+<div class="top-content-left">
+    <span class="title-search-box">Thời gian đặt phòng</span>
+    <div class="search-box">
+
+        <div class="checkin-room-date">
+            <span>Ngày nhận phòng</span>
+            <div class="date-checkin">
+                <input class="input-date" type="date" />
+            </div>
+        </div>
+        <div class="checkout-room-date">
+            <span>Ngày trả phòng</span>
+            <div class="date-checkout">
+                <input type="date" class="input-date" />
+            </div>
+        </div>
+        <div class="person-amount">
+            <span>Nghỉ 1 đêm</span>
+            @*<button class="btn-default btn-person-amount">
+                    <span class="text">1 Người lớn</span>
+                </button>*@
+            <select class="btn-default btn-person-amount">
+                <option>1 người lớn</option>
+                <option>2 người lớn</option>
+                <option>3 người lớn</option>
+                <option>4 người lớn</option>
+                <option>5 người lớn</option>
+                <option>6 người lớn</option>
+            </select>
+        </div>
+        <div class="child-and-room" style="padding-bottom:30px">
+            <select class="btn-default btn-child-amount">
+                <option>0 có trẻ</option>
+                <option>1 trẻ em</option>
+                <option>2 trẻ em</option>
+                <option>3 trẻ em</option>
+                <option>4 trẻ em</option>
+                <option>5 trẻ em</option>
+            </select>
+            <select class="btn-default btn-room-amount">
+                <option>1 phòng</option>
+                <option>2 phòng</option>
+                <option>3 phòng</option>
+                <option>4 phòng</option>
+                <option>5 phòng</option>
+                <option>6 phòng</option>
+                <option>7 phòng</option>
+            </select>
+        </div>
+
+    </div>
+</div>

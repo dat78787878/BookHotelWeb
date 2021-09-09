@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using BookHotelWeb.Models
+@model Hotel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/Content/CSS/common.css" rel="stylesheet" />
+    <link href="/Content/CSS/header.css" rel="stylesheet" />
+    <link href="/Content/CSS/content.css" rel="stylesheet" />
+    <link href="/Content/CSS/header.css" rel="stylesheet" />
+    <link href="/Content/CSS/footer.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div id="hotelDetail">
+        @{ Html.RenderAction("Header", "PartView");}
+        <a href="~/Views/PartView/Comment.cshtml">~/Views/PartView/Comment.cshtml</a>
+        <div class="content" style="margin-top: 130px;">
+            <!-- Bên trái của body -->
+            <div class="content-left">
+                @{ Html.RenderAction("SearchBox", "PartView");}
+            </div>
+            <div class="content-right">
+                <!-- nav bar -->
+                @*<div class="nav-bar">
+                    <div class="nav-bar-1 rate-info"><a href="#">Thông tin & giá</a></div>
+                    <div class="nav-bar-1 convenient"><a href="#">Tiện nghi</a></div>
+                    <div class="nav-bar-1 convention"><a href="#">Quy tắc chung</a></div>
+                    <div class="nav-bar-1 comment"><a href="#">Đánh giá của khách</a></div>
+                </div>*@
+                <div class="hotel-detail-info">
+                    <span class="room-price" id="roomPrice" style="font-size:20px;font-weight:bold;">Giá Phòng: @BookHotelWeb.Entity.Common.FormatMoney(ViewBag.Price.ToString()) VND</span>
+                    <div class="row-1">
+                        <div class="hotel-name"><span id="hotelName">@Model.HotelName </span></div>
+                        <div class="btn">
+                            <div class="evaluate" style="margin-right:70px; font-size:20px; font-weight:bold;">
+                                <span>Đánh giá khách sạn : @Model.Evaluate</span><span id="hotelEvaluate"></span><span></span>
+                            </div>
+                            <div class="button">
+                                <a id="btnBook" href="#" class="a-book-now">Đặt ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-2">
+                        <div class="hotel-location">
+                            <span class="icon-location"></span>
+                            <span id="hotelAddress" class="text" style="font-size:20px;">Địa chỉ: @Model.HotelAddress</span>
+                            <span class="googlemap-link"><a class="goooglemap-view" href="#">-Xem vị trí trên bản đồ</a></span>
+                        </div>
+                    </div>
+                    <div class="row-3">
+                        <div class="top-images">
+                            <div class="left-image">
+                                <div class="image-1" id="img-1">
+                                    <img src="@ViewBag.SourceImageHotel/@Model.Image1" alt="" />
+                                </div>
+                                <div class="image-2" id="img-2">
+                                    <img src="@ViewBag.SourceImageHotel/@Model.Image2" alt="" />
+                                </div>
+                            </div>
+                            <div class="right-image" id="img-3">
+                                <img src="@ViewBag.SourceImageHotel/@Model.Image3" alt="" />
+                            </div>
+                        </div>
+                        <div class="bottom-images">
+                            <div id="img-4"><img src="@ViewBag.SourceImageHotel/@Model.Image4" alt="" /></div>
+                            <div class="image" id="img-5"><img src="@ViewBag.SourceImageHotel/@Model.Image5" alt="" /></div>
+                            <div class="image" id="img-6"><img src="@ViewBag.SourceImageHotel/@Model.Image6" alt="" /></div>
+                            <div class="image" id="img-7"><img src="@ViewBag.SourceImageHotel/@Model.Image7" alt="" /></div>
+                            <div class="image" id="img-8"><img src="@ViewBag.SourceImageHotel/@Model.Image8" alt="" /></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-description">
+                    <p id="hotelDescription" style="font-size:20px; line-height:25px">
+                        @Model.HotelIntroduce
+                    </p>
+                </div>
+                <hr>
+                <div class="rate-and-info">
+                    <div class="table">
+                        <div class="row-th">
+                            <ul>
+                                <li class="col-1">
+                                    <span>Loại chỗ nghỉ</span>
+                                </li>
+                                <li class="col-2"><span>Số người tối đa và giá phòng</span></li>
+                                <li class="col-3"><span>Số phòng</span></li>
+                                <li class="col-4"><span>Các lựa chọn</span></li>
+                            </ul>
+                        </div>
+                        <div class="tbody">
+                            <ul class="ul-td">
+                                <li class="col-1 col">
+                                    <span style="margin-left:10px; font-size:15px;font-weight:bold">Giới thiệu sơ bộ phòng</span>
+                                    <ul class="ul-1">
+                                        @foreach (var info in ViewBag.Introduces)
+                                        {
+                                            <li>@info</li>
+                                        }
+                                    </ul>
+                                    <hr>
+                                    <span style="margin-left:10px; font-size:15px;font-weight:bold">Thông tin phòng</span>
+                                    <ul class="ul-1 ul-2 normal">
+                                        @foreach (var info in ViewBag.Informations)
+                                        {
+                                            <li>@info</li>
+                                        }
+                                    </ul>
+                                    <hr>
+                                    <span style="margin-left:10px; font-size:15px;font-weight:bold">Dịch vụ phòng</span>
+                                    <ul class="ul-1">
+                                        @foreach (var info in ViewBag.Services)
+                                        {
+                                            <li>@info</li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li class="col-2 col">
+                                    <ul class="ul-1">
+                                        <li>
+
+                                            Số người :<select style="margin-left : 10px" id="selectRoom" name="selectRoom">
+                                                @foreach (var room in ViewBag.Rooms)
+                                                {
+                                                    <option value="@room.IdRoom">Phòng @room.IdRoom : Tối đa @room.MaxPerson người , Giá phòng : @room.Price</option>
+                                                }
+                                            </select>
+                                        </li>
+                                        <li style="list-style-type:none;margin-top:50px"><a href="#" id="bookNow" class="a-book-now">Đặt ngay</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="col-3 col">
+                                    <ul class="ul-1">
+                                        <li>
+                                            Phòng :<select style="margin-left : 10px">
+                                                <option value="">1</option>
+                                                <option value="">2</option>
+                                                <option value="">3</option>
+                                                <option value="">4</option>
+                                                <option value="">5</option>
+                                                <option value="">6</option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="col-4 col">
+                                    <ul class="ul-1">
+                                        <li>Phí hủy toàn bộ tiền phòng</li>
+                                        <li>Không cần thanh toán trước- <span class="span-1">Thanh toán ở chỗ ngỉ</span> </li>
+                                       
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        @{ Html.RenderAction("Comment", "PartView");}
+        @{ Html.RenderAction("Footer", "PartView");}
+    </div>
+</body>
+</html>
+
+<script src="~/Content/JS/hotel.js">
+    
+</script>

@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "BookingSucces";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="/Content/CSS/header.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/Content/CSS/footer.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="/Content/CSS/dat.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="~/Content/JS/payment.js">
+
+    </script>
+</head>
+<body>
+    <form action="/Payment/Confirm" method="post">
+
+        <p>@ViewBag.success</p>
+        <p>Vui lòng mở mail và xác nhận theo các bước</p>
+        <input type="text" id="code" name="code" />
+        <p><a href="/Home/Index"><span style="color: #0000CC;">Quay Về Trang Chủ</span></a></p>
+        <button class="bui-button bui-button--primary bui-button--large js-bp-submit-button--next-step e2e-bp-submit-button--next-step bp-button" type="submit" name="book" value="Confirm" id="btnSubmit1">
+            <span class="bui-button__text js-button__text"> Xác nhận </span> <span class="bui-button__icon bui-button__icon--end js-button__icon">
+                <svg class="bk-icon -streamline-arrow_nav_right" height="24" role="presentation" width="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.45 6c.2 0 .39.078.53.22l5 5c.208.206.323.487.32.78a1.1 1.1 0 0 1-.32.78l-5 5a.75.75 0 0 1-1.06 0 .74.74 0 0 1 0-1.06L13.64 12 8.92 7.28a.74.74 0 0 1 0-1.06.73.73 0 0 1 .53-.22zm4.47 5.72zm0 .57z"></path></svg>
+            </span>
+        </button>
+
+    </form>
+</body>
+
+
+</html>
+
+

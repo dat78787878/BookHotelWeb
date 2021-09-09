@@ -1,0 +1,106 @@
+.footer{
+    /* position: absolute; */
+    /* bottom: 0px; */
+    position: absolute;
+    width: 100%;
+    height: 270px;
+    left: 0;
+    right: 0;
+    /* margin: 0 auto; */
+    color: #ffffff;
+}
+
+li .icon{
+    /* border-radius: 50%; */
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-color: white; */
+}
+
+li .text{
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+.footer .top{
+    width: 100%;
+    height: 220px;
+    background-color: #3b3939;
+    display: flex;
+    font-size: 12px;
+}
+.top .footer-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.top .line-height{
+    line-height: 30px;
+}
+.top .h-col-1{
+    width: 30%;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+.top .h-col-2{
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 5%;
+}
+.top .h-col-3{
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.top .h-row{
+    display: flex;
+    height: 20px;
+    margin-top: 10px;
+}
+.top .h-row .h-icon{
+    height: 20px;
+    width: 20px;
+}
+.top .h-location{
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/Content/icon/location.jpg');
+}
+.top .h-email{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/Content/icon/mail.png');
+}
+.top .h-phonenumber{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/Content/icon/phone.png');
+}
+.top .h-row .h-text{
+    margin-left: 20px;
+}
+
+.top .h-col-3 .a{
+    color: #ffffff;
+    font-size:15px ;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+.top .h-col-3 .a:hover{
+    color:#0b0b82;
+    text-decoration: underline;
+}
+
+.footer .bottom{
+    height: 100%;
+    height: 50px;
+    background-color: antiquewhite;
+    text-align: center;
+    line-height: 50px;
+    background-color: #131212;
+}

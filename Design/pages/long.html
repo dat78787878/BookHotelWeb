@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link href="../CSS/long.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../CSS/header.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../CSS/footer.css" rel="stylesheet" type="text/css" media="all" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="body">
+        <section class="cover-search">
+            <div class="title-content">
+                <h1>Tìm kiếm khách sạn</h1>
+                <p style="margin-top:-10px ;">Từ khách sạn giá rẻ đến phòng sang trọng</p>
+            </div>
+            <div class="search-box">
+                <div class="search-line">
+                    <h4>Thành phố, địa điểm hoặc tên khách sạn</h4>
+                    <input type="text" placeholder="Thành phố, địa điểm hoặc tên khách sạn">
+                </div>
+                <div class="search-line" style="display: flex; justify-content: space-between;">
+                    <div class="time">
+                        <h4>Ngày nhận phòng</h4>
+                        <input id="time-nhan-phong" type="date" class="input-time">
+                    </div>
+                    <div class="time">
+                        <h4>Số đêm</h4>
+                        <select id="selection-day" class="input-time">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                    </div>
+                    <div class="time">
+                        <h4>Ngày trả phòng</h4>
+                        <input id="time-tra-phong" type="date" disabled class="input-time">
+                    </div>
+                </div>
+                <div class="search-line">
+                    <h4>Số phòng</h4>
+                    <div style="display: flex;">
+                        <input type="text" placeholder="Số phòng">
+                        <input type="submit" value="Tìm kiếm khách sạn" id="btn-search">
+                    </div>
+                </div>
+                <!-- <div class="dropdown-room">
+                    
+                </div> -->
+            </div>
+        </section>
+        <section class="cover-near-hotel">
+            <div class="title-content">
+                <h1>Những khách sạn gần đây</h1>
+                <p style="margin-top:-10px ;">Tìm ưu đãi khách sạn tuyệt vời cho đêm nay hoặc chuyến đi sắp tới</p>
+            </div>
+            <div class="row near-hotel-box">
+                <div class="col-md-6 cover-hotel">
+                    <div class="hotel-image"></div>
+                    <div class="content-hotel">
+                        <h5>Cát Linh Hotel</h5>
+                        <p>Quận Hoàn Kiếm, Hà Nội</p>
+                        <h5 class="hotel-cost">VND 352.800</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 cover-hotel">
+                    <div class="hotel-image"></div>
+                    <div class="content-hotel">
+                        <h5>Cát Linh Hotel</h5>
+                        <p>Quận Hoàn Kiếm, Hà Nội</p>
+                        <h5 class="hotel-cost">VND 352.800</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 cover-hotel">
+                    <div class="hotel-image"></div>
+                    <div class="content-hotel">
+                        <h5>Cát Linh Hotel</h5>
+                        <p>Quận Hoàn Kiếm, Hà Nội</p>
+                        <h5 class="hotel-cost">VND 352.800</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 cover-hotel">
+                    <div class="hotel-image"></div>
+                    <div class="content-hotel">
+                        <h5>Cát Linh Hotel</h5>
+                        <p>Quận Hoàn Kiếm, Hà Nội</p>
+                        <h5 class="hotel-cost">VND 352.800</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 cover-hotel">
+                    <div class="hotel-image"></div>
+                    <div class="content-hotel">
+                        <h5>Cát Linh Hotel</h5>
+                        <p>Quận Hoàn Kiếm, Hà Nội</p>
+                        <h5 class="hotel-cost">VND 352.800</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 cover-hotel">
+                    <div class="hotel-image"></div>
+                    <div class="content-hotel">
+                        <h5>Cát Linh Hotel</h5>
+                        <p>Quận Hoàn Kiếm, Hà Nội</p>
+                        <h5 class="hotel-cost">VND 352.800</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cover-favorite-destination">
+            <div class="title-content">
+                <h1>Điểm đến khách sạn đang phổ biến</h1>
+                <p style="margin-top:-10px ;">Khám phá các điểm đến đang được ưa chuộng bởi du khách từ Việt Nam</p>
+            </div>
+            <div class="favorite-destination-box">
+                <div class="city-box">
+                    <div class="city-image"></div>
+                    <h5>TP. Hồ Chí Minh, Việt Nam</h5>
+                    <p>Giá trung bình một đêm ở khách sạn 500.000đ</p>
+                </div>
+                <div class="city-box">
+                    <div class="city-image"></div>
+                    <h5>TP. Hồ Chí Minh, Việt Nam</h5>
+                    <p>Giá trung bình một đêm ở khách sạn 500.000đ</p>
+                </div>
+                <div class="city-box">
+                    <div class="city-image"></div>
+                    <h5>TP. Hồ Chí Minh, Việt Nam</h5>
+                    <p>Giá trung bình một đêm ở khách sạn 500.000đ</p>
+                </div>
+
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-xl-4" style="width: max-content;height: max-content;background-color: chartreuse;"></div>
+            </div> -->
+        </section>
+
+        <section class="top-hotel">
+            <div class="title-content">
+                <h1>Những khách sạn nổi bật</h1>
+                <p style="margin-top:-10px ;">Trải nghiệm những khách sạn được yêu thích nhất</p>
+            </div>
+            <div class="top-hotel-box">
+                <div class="hotel-box">
+                    <div class="hotel-top-image"></div>
+                    <div style="text-align:center;">
+                        <h5>Spring Hotel, Hà Nội</h5>
+                        <p>Giá chỉ từ 700.000đ một đêm</p>
+                    </div>
+                </div>
+                <div class="hotel-box">
+                    <div class="hotel-top-image"></div>
+                    <div style="text-align:center;">
+                        <h5>Spring Hotel, Hà Nội</h5>
+                        <p>Giá chỉ từ 700.000đ một đêm</p>
+                    </div>
+                </div>
+                <div class="hotel-box">
+                    <div class="hotel-top-image"></div>
+                    <div style="text-align:center;">
+                        <h5>Spring Hotel, Hà Nội</h5>
+                        <p>Giá chỉ từ 700.000đ một đêm</p>
+                    </div>
+                </div>
+                <div class="hotel-box">
+                    <div class="hotel-top-image"></div>
+                    <div style="text-align:center;">
+                        <h5>Spring Hotel, Hà Nội</h5>
+                        <p>Giá chỉ từ 700.000đ một đêm</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="footer">
+            <div class="top">
+                <div class="h-col-1">
+                    <div class="footer-title">MÔ TẢ</div>
+                    <div class="line-height">Miễn phí tính năng book phòng trực tuyến, du khách thanh toán trực tiếp trên website. Nhận thiết kế website đơn/đa khách sạn theo mẫu hoặc theo yêu cầu phù hợp đẳng cấp Hotel. Cấu trúc web chuẩn seo. Setup thanhtoán trựctuyến. Tùy
+                        biến web linh hoạt. Hỗ trợ và bảo trì 24/7. Miễn phí Bookphòng online.</div>
+                </div>
+                <div class="h-col-2">
+                    <div class="footer-title">LIÊN HỆ</div>
+                    <div class="h-row  h-location">
+                        <div class="h-icon"></div>
+                        <div class="h-text">Học Viện KTQS - 136 HQV</div>
+                    </div>
+                    <div class="h-row h-email">
+                        <div class="h-icon"></div>
+                        <div class="h-text">hien.van.nguyen0408@gmail.com</div>
+                    </div>
+                    <div class="h-row h-phonenumber">
+                        <div class="h-icon"></div>
+                        <div class="h-text">0123456789</div>
+                    </div>
+                </div>
+                <div class="h-col-3 line-height">
+                    <div class="footer-title">FOLLOW US</div>
+                    <div><a class="a" href="https://www.facebook.com/hien.van.nguyen0408.mta17/">Nguyễn Văn Hiến</a></div>
+                    <div><a class="a" href="https://www.facebook.com/long.kieu.771">Kiều Đức Long</a></div>
+                    <div><a class="a" href="https://www.facebook.com/trantrungthiep">Trần Trung Thiệp</a></div>
+                    <div><a class="a" href="100009684824073">Đỗ Thành Đạt</a></div>
+
+                </div>
+            </div>
+            <div class="bottom">
+                Book-Hotel HIẾN - LONG - THIỆP - ĐẠT
+            </div>
+        </div>
+        <script src="../JS/home.js"></script>
+</body>
+
+</html>

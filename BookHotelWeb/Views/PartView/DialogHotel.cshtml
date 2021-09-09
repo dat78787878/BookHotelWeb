@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Dialog";
+}
+@using BookHotelWeb.Models
+@model Hotel
+<style>
+    .btn-default {
+        height: 40px;
+        background-color: #019160;
+        border: none;
+        outline: none;
+        margin-left: 24px;
+        margin-right: 24px;
+        align-items: left;
+        color: #ffffff;
+        font-size: 13px;
+    }
+
+        .btn-default:hover {
+            background-color: #2fbe8e;
+        }
+
+        .btn-default:focus {
+            background-color: #01b075;
+        }
+    .btn-disagree {
+        position: absolute;
+        right: 0px;
+        top: 10px;
+        height: 40px;
+        padding: 0 24px;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    .btn-confirm:focus {
+        background-color: #01b075;
+    }
+
+    .btn-confirm {
+        position: absolute;
+        top: 10px;
+        padding: 0 24px;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    .btn-disagree {
+        right: 0px;
+    }
+    .btn-agree {
+        right: 102px;
+    }
+    .icon-warning {
+        width: 20px;
+        height: 20px;
+        background-image: url('/Content/icon/warning.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 2px;
+        margin-left: 5px;
+    }
+
+    .dialog-confirm {
+        position: fixed;
+        top: 0px;
+        left: 560px;
+        z-index: 1000;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid #bbbbbb;
+        border-radius: 4px;
+        width: 450px;
+    }
+
+        .dialog-confirm .h-title {
+            font-size: 15px;
+            font-weight: bold;
+            padding-bottom: 24px;
+            padding: 24px;
+        }
+
+        .dialog-confirm .h-content {
+            display: flex;
+            padding: 0 24px 24px 24px;
+        }
+
+            .dialog-confirm .h-content .h-icon {
+                width: 30px;
+                height: 30px;
+                background-color: #e5e5e5;
+                flex-shrink: 0;
+                border-radius: 50%;
+            }
+
+            .dialog-confirm .h-content .notify {
+                margin-left: 10px;
+            }
+
+        .dialog-confirm .buttons {
+            padding: 0;
+            position: relative;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 60px;
+            background-color: #e5e5e5;
+        }
+    .hide-dialog {
+        visibility:hidden;
+    }
+</style>
+
+
+

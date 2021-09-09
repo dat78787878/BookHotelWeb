@@ -1,0 +1,220 @@
+body {
+    
+}
+
+.body {
+    background-color: #ffffff;
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top:130px;
+}
+
+.body-1 {
+    background-color: #ffffff;
+    float: left;
+    width: 264px;
+}
+
+.timkiem {
+    background-color: #febb02;
+    height: 434px;
+    border-radius: 10px;
+}
+
+.font-tim {
+    width: 232px;
+    height: 28px;
+    padding: 6% 6% 0 6%;
+}
+
+.dinhdanh-1 {
+    font-size: 20px;
+}
+
+.font-diadiem {
+    width: 232px;
+    height: 18px;
+    padding: 0px 6% 0px 6%;
+}
+
+.dinhdanh-2 {
+    font-size: 13px;
+}
+
+.font-input-1 {
+    width: 232px;
+    height: 36px;
+    padding: 0px 6% 0px 6%;
+}
+
+.input-1 {
+    height: 36px;
+    width: 232px;
+}
+
+.font-ngay {
+    width: 232px;
+    height: 18px;
+    padding: 6% 6% 0px 6%;
+}
+
+.so-nguoi {
+    width: 232px;
+    height: 36px;
+    margin-top: 10%;
+    padding: 0px 6% 0px 6%;
+}
+
+.luachon {
+    width: 232px;
+    height: 36px;
+}
+
+.treem-phong {
+    width: 232px;
+    height: 36px;
+    margin-top: 5%;
+    padding: 0px 6% 0px 6%;
+}
+
+.treem {
+    background-color: #ffffff;
+    float: left;
+    width: 49%;
+    height: 36px;
+}
+
+.luachon-1 {
+    width: 100%;
+    height: 36px;
+}
+
+.phong {
+    background-color: #ffffff;
+    float: right;
+    width: 49%;
+    height: 36px;
+}
+
+.btn-tim {
+    background-color: #0071c2;
+    font-size: 20px;
+    color: #ffffff;
+    width: 232px;
+    height: 48px;
+    margin-top: 5%;
+    margin-left: 6%;
+    border-radius: 10px;
+}
+
+    .btn-tim:hover {
+        background-color: #819FF7;
+        color: #ffffff;
+    }
+
+.cach {
+    background-color: #ffffff;
+    height: 10px;
+}
+
+.checkbox {
+    height: 1025px;
+}
+
+.checkbox-box {
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.box-bottom {
+    background-color: #febb02;
+}
+
+.box-top {
+    background-color: #C0C0C0;
+    border-bottom: 1px solid;
+    height: 20px;
+    padding-left: 5px;
+}
+
+.box-1 {
+    width: 246px;
+    height: 30px;
+}
+
+.body-2 {
+    width: 73%;
+    margin-left: 2%;
+    height: auto;
+}
+
+.thongtin-1 {
+    background-color: #C0C0C0;
+    height: 234px;
+    border-radius: 10px;
+    display: flex;
+    border: 1px solid;
+}
+
+.chitiet {
+    width: 780px;
+    height: 200px;
+    margin: auto;
+}
+
+.anh1 {
+    width: 200px;
+    height: 200px;
+    float: left;
+    border-radius: 5px;
+    display: flex;
+}
+
+.datphong {
+    background-color: #C0C0C0;
+    float: right;
+    width: 580px;
+    height: 200px;
+}
+
+.tenphong {
+    width: 550px;
+    height: 40px;
+    margin: 0px 15px;
+}
+
+.left {
+    float: left;
+    width: 90%;
+}
+
+.right {
+    float: right;
+    width: 10%;
+}
+
+.tenphong-1 {
+    width: 550px;
+    height: 35px;
+    margin: 0px 15px;
+}
+.datngay {
+    background-color: #0071c2;
+    width: 120px;
+    height: 40px;
+    margin: 15px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+    .datngay:hover {
+        background-color: #819FF7;
+        color: #ffffff;
+    }
+
+.cach-2 {
+    background-color: #ffffff;
+    height: 20px;
+}

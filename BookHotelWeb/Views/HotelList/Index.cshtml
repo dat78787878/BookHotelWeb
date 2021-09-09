@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using BookHotelWeb.Models;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Content/CSS/thiep.css">
+    <link href="~/Content/CSS/header.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/CSS/footer.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/CSS/content.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="~/Content/CSS/components/button.css" rel="stylesheet" />
+    <link href="~/Content/CSS/components/input.css" rel="stylesheet" />
+    <title>Thông Tin Khách Sạn</title>
+</head>
+<body>
+    <!-- Header -->
+
+    @{ Html.RenderAction("Header", "PartView");}
+    <!-- Body -->
+    <div class="body">
+        <div class="content-left">
+            @{ Html.RenderAction("SearchBox", "PartView");}
+        </div>
+        <div class="body-2">
+            <div style="font-size: 25px; color: #0071c2; margin-bottom: 10px;">Các khách sạn trong khu vực @ViewBag.City.CityName</div>
+            @foreach (var hotel in ViewBag.hotels)
+            {
+                <div class="thongtin-1">
+                    <div class="chitiet">
+                        <div class="anh1">
+                            <img style="background-size: cover;" src="@hotel.Image1" alt="">
+                        </div>
+                        <div class="datphong">
+                            <div class="tenphong">
+                                <div class="left">
+                                    <span style="font-size: 21px; color: #0071c2;"><b>@hotel.HotelName</b></span>
+                                </div>
+                                <div class="right">
+                                    <span style="font-size: 21px; color:#0071c2;"><b>@hotel.Evaluate<i style="color:#febb02" class="fas fa-star"></i></b></span>
+                                </div>
+                            </div>
+                            <div class="tenphong-1">
+                                <span style="font-size: 15px; color: #0071c2;"><b>@hotel.HotelAddress</b></span>
+                            </div>
+                            <div class="tenphong-1">
+                                <span style="font-size: 13px; color: #0071c2;"><b>Cách trung tâm @hotel.Distance</b></span>
+                            </div>
+                            <a href="/DetailHotel/Index/@hotel.IdHotel" id="bookListHotel" class="a-book-now" style="width:120px;height:40px;margin:30px 0 0 15px;text-decoration:none" >Đặt ngay</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="cach-2">
+
+                </div>
+            }
+        </div>
+    </div>
+    <!-- Footer -->
+    @{ Html.RenderAction("Footer", "PartView");}
+
+
+</body>
+</html>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Content/JS/hotel.js">
+
+</script>

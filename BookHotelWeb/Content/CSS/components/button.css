@@ -1,0 +1,43 @@
+﻿button:hover{
+    cursor: pointer;
+}
+.btn-default{
+    height: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+}
+.btn-search {
+    background-color: #0071c2;
+}
+    .btn-search:hover {
+        background-color: #007192;
+    }
+    .btn-noneborder {
+        border: none;
+        outline: none;
+    }
+.btn-room-view{
+    height: 30px;
+    width: 100%;
+    background-color: #1254b8;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.btn-now-reserve {
+    height: 40px;
+    background-color: #0071c2;
+    color: #ffffff;
+    padding-left:12px;
+    padding-right:12px;
+    border-radius:4px;
+}
+    .btn-now-reserve:hover {
+        background-color: #124696;
+        cursor:pointer;
+    }

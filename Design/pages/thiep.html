@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/thiep.css">
+    <link href="../CSS/header.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../CSS/footer.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <title>Thông Tin Khách Sạn</title>
+
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo"></div>
+    <div class="l-navbar">
+        <div class="navbar-item" style="color: green;">Trang chủ</div>
+        <div class="navbar-item">Đặt phòng</div>
+        <div class="navbar-item">Đánh giá khách hàng</div>
+        <div class="navbar-item">Liên hệ và hỗ trợ</div>
+    </div>
+    <div class="l-navbar" style="margin-left: 260px;">
+        <div class="navbar-login">Đăng ký</div>
+        <div class="navbar-login">Đăng nhập</div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+      <div class="body-1">
+          <div class="timkiem">
+              <div class="font-tim">
+                    <span class="dinhdanh-1"><b>Tìm</b></span>
+              </div>
+              <div class="font-diadiem">
+                    <span class="dinhdanh-2" >Tên chỗ nghỉ/địa điểm đến</span>
+              </div>
+              <div class="font-input-1">
+                    <input type="text" class="input-1" placeholder="Tìm kiếm theo địa điểm"/>
+              </div>
+              <div class="font-ngay">
+                    <span class="dinhdanh-2" >Ngày Nhận Phòng</span>
+              </div>
+              <div class="font-input-1">
+                    <input type="date" class="input-1">
+              </div>
+              <div class="font-ngay">
+                    <span class="dinhdanh-2" >Ngày Trả Phòng</span>
+              </div>
+              <div class="font-input-1">
+                    <input type="date" class="input-1">
+              </div>
+              <div class="so-nguoi">
+                    <select class="luachon">
+                        <option value="1"> 1 người lớn</option>
+                        <option value="2"> 2 người lớn</option>
+                        <option value="3"> 3 người lớn</option>
+                        <option value="4"> 4 người lớn</option>
+                        <option value="5"> 5 người lớn</option>
+                        <option value="6"> 6 người lớn</option>
+                        <option value="7"> 7 người lớn</option>
+                        <option value="8"> 8 người lớn</option>
+                        <option value="9"> 9 người lớn</option>
+                        <option value="10"> 10 người lớn</option>
+                    </select>
+              </div>
+              <div class="treem-phong">
+                    <div class="treem">
+                        <select class="luachon-1">
+                            <option value="0"> không có trẻ em</option>
+                            <option value="1"> 1 trẻ em</option>
+                            <option value="2"> 2 trẻ em</option>
+                            <option value="3"> 3 trẻ em</option>
+                            <option value="4"> 4 trẻ em</option>
+                            <option value="5"> 5 trẻ em</option>
+                        </select>
+                    </div>
+                    <div class="phong">
+                        <select class="luachon-1">
+                            <option value="1"> 1 phòng</option>
+                            <option value="2"> 2 phòng</option>
+                            <option value="3"> 3 phòng</option>
+                            <option value="4"> 4 phòng</option>
+                            <option value="5"> 5 phòng</option>
+                            <option value="6"> 6 phòng</option>
+                            <option value="7"> 7 phòng</option>
+                            <option value="8"> 8 phòng</option>
+                            <option value="9"> 9 phòng</option>
+                            <option value="10"> 10 phòng</option>
+                        </select>
+                    </div>
+              </div>
+              <button class="btn-tim"><b>Tìm</b></button>
+          </div>
+          <div class="cach">
+
+          </div>
+          <div class="checkbox">
+                <div class="chonloc">
+                    <div class="span">
+                        <span style="font-size: 20px;"><b>Chọn lọc theo:</b> </span>
+                    </div>
+                </div>
+                <div class="chonloc-1">
+                    <div class="khoangcach">
+                        <span style="font-size: 15px;"><b>Khoảng cách từ trung tâm</b> </span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Dưới 1 km</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Dưới 2 km</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Dưới 3 km</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Dưới 5 km</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Dưới 10 km</span>
+                    </div>
+                </div>
+                <div class="chonloc-2">
+                    <div class="thanhpho">
+                        <span style="font-size: 15px;"><b>Địa Điểm</b> </span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Thành Phố Hồ Chí Minh</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Thủ Đô Hà Nội</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Thành Phố Quảng Ninh</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Thành Phố Hải Phòng</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Thành Phố Đà Nẵng</span>
+                    </div>
+                </div>
+                <div class="chonloc-3">
+                    <div class="quan">
+                        <span style="font-size: 15px;"><b>Quận</b> </span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Bắc Từ Liêm</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Nam Từ Liêm</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Tây Hồ</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Ba Đình</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Đống Đa</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Hoàn Kiếm</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Hai Bà Trưng</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Cầu Giấy</span>
+                    </div>
+                </div>
+                <div class="chonloc-4">
+                    <div class="gia">
+                        <span style="font-size: 15px;"><b>Giá</b> </span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>0vnđ - 1.000.000vnđ</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>1.000.000vnđ - 2.000.000vnđ</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>2.000.000vnđ - 3.000.000vnđ</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>3.000.000vnđ - 5.000.000vnđ</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>5.000.000vnđ - 10.000.000vnđ</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Trên 10.0000.000vnđ</span>
+                    </div>
+                </div>
+                <div class="chonloc-5">
+                    <div class="tiennghiphong">
+                        <span style="font-size: 15px;"><b>Tiện Nghi Phòng</b> </span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Khu vực bếp</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>phòng tắm riêng</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Điều hòa không khí</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Bàn làm việc</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Bồn tắm</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>Máy giặt</span>
+                    </div>
+                    <div class="box-1">
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                        <span>TV màn hình phẳng</span>
+                    </div>
+                </div>
+          </div>
+      </div>
+      <div class="body-2">
+            <div class="thongtin-1">
+                <div class="chitiet">
+                    <div class="anh1">
+                        <img class="img-1" src="..//content/images/anh1.jpg" alt="">
+                    </div>
+                    <div class="datphong">
+                        <div class="tenphong">
+                            <div class="left">
+                                <span style="font-size: 21px; color: #0071c2;"><b>Somerset Grand Ha Noi</b></span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 21px; color: #0071c2;"><b>3.000.000vnđ</b></span>
+                            </div>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 15px; color: #0071c2;"><b>Quận Hoàn Kiếm, Hà Nội</b></span>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 13px; color: #0071c2;"><b>Cách trung tâm 650m</b></span>
+                        </div>
+                        <div class="tenphong-2">
+                            <span style="font-size: 13px; color: #000000;">Tọa lạc tại quận Hoàn Kiếm thuộc thủ đô Hà Nội, Somerset Grand Hanoi cung cấp các dinh thự tự phục vụ.</span>
+                        </div>
+                        <button class="datngay">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="cach-2">
+
+            </div>
+            <div class="thongtin-1">
+                <div class="chitiet">
+                    <div class="anh2">
+                    </div>
+                    <div class="datphong">
+                        <div class="tenphong">
+                            <div class="left">
+                                <span style="font-size: 21px; color: #0071c2;"><b>Fraser Suites Ha Noi</b></span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 21px; color: #0071c2;"><b>5.000.000vnđ</b></span>
+                            </div>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 15px; color: #0071c2;"><b>Quận Tây Hồ, Hà Nội</b></span>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 13px; color: #0071c2;"><b>Cách trung tâm 4,8 km</b></span>
+                        </div>
+                        <div class="tenphong-2">
+                            <span style="font-size: 13px; color: #000000;">Toạ lạc tại một vị trí chiến lược trong khu Hồ Tây tuyệt đẹp, Fraser Suites Hanoi cung cấp các căn hộ dịch vụ với những tiện nghi gồm hồ bơi ngoài trời kiểu resort và kết nối thẳng tới trung...</span>
+                        </div>
+                        <button class="datngay">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="cach-2">
+
+            </div>
+            <div class="thongtin-1">
+                <div class="chitiet">
+                    <div class="anh3">
+
+                    </div>
+                    <div class="datphong">
+                        <div class="tenphong-4">
+                            <div class="left">
+                                <span style="font-size: 21px; color: #0071c2;"><b>Oakwood Residence Ha Noi</b></span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 21px; color: #0071c2;"><b>4.000.000vnđ</b></span>
+                            </div>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 15px; color: #0071c2;"><b>Quận Tây Hồ, Hà Nội</b></span>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 13px; color: #0071c2;"><b>Cách trung tâm 4,8 km</b></span>
+                        </div>
+                        <div class="tenphong-2">
+                            <span style="font-size: 13px; color: #000000;">Nằm cách Hồ Tây 400 m, Oakwood Residence Hanoi có nhà hàng, trung tâm thể dục và chỗ nghỉ với máy điều hòa, ban công cùng WiFi miễn phí.</span>
+                        </div>
+                        <button class="datngay">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="cach-2">
+
+            </div>
+            <div class="thongtin-1">
+                <div class="chitiet">
+                    <div class="anh4">
+
+                    </div>
+                    <div class="datphong">
+                        <div class="tenphong-4">
+                            <div class="left">
+                                <span style="font-size: 21px; color: #0071c2;"><b>Park Hill No1 Apartment</b></span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 21px; color: #0071c2;"><b>10.000.000vnđ</b></span>
+                            </div>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 15px; color: #0071c2;"><b>Hà Nội</b></span>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 13px; color: #0071c2;"><b>Cách trung tâm 4,2 km</b></span>
+                        </div>
+                        <div class="tenphong-2">
+                            <span style="font-size: 13px; color: #000000;">Park Hill No1 Apartment tọa lạc tại thành phố Hà Nội, cách Nhà hát Lớn 5 km. Chỗ nghỉ có nhà hàng, WiFi miễn phí, dịch vụ lễ tân 24 giờ và dịch vụ phòng.</span>
+                        </div>
+                        <button class="datngay">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="cach-2">
+
+            </div>
+            <div class="thongtin-1">
+                <div class="chitiet">
+                    <div class="anh5">
+
+                    </div>
+                    <div class="datphong">
+                        <div class="tenphong-5">
+                            <div class="left">
+                                <span style="font-size: 21px; color: #0071c2;"><b>Peridot Grand Hotel & Spa by AIRA</b></span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 21px; color: #0071c2;"><b>6.000.000vnđ</b></span>
+                            </div>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 15px; color: #0071c2;"><b>Quận Hoàn Kiếm, Hà Nội</b></span>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 13px; color: #0071c2;"><b>Cách trung tâm 900 m</b></span>
+                        </div>
+                        <div class="tenphong-2">
+                            <span style="font-size: 13px; color: #000000;">Tọa lạc tại thành phố Hà Nội, "Peridot Grand Hotel & Spa by AIRA" có 2 nhà hàng trong khuôn viên, 3 quán bar, hồ bơi ngoài trời, trung tâm thể dục và quán bar.</span>
+                        </div>
+                        <button class="datngay">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="cach-2">
+
+            </div>
+            <div class="thongtin-1">
+                <div class="chitiet">
+                    <div class="anh6">
+
+                    </div>
+                    <div class="datphong">
+                        <div class="tenphong">
+                            <div class="left">
+                                <span style="font-size: 21px; color: #0071c2;"><b>The Oriental Jade Hotel</b></span>
+                            </div>
+                            <div class="right">
+                                <span style="font-size: 21px; color: #0071c2;"><b>8.000.000vnđ</b></span>
+                            </div>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 15px; color: #0071c2;"><b>Quận Hoàn Kiếm, Hà Nội</b></span>
+                        </div>
+                        <div class="tenphong-1">
+                            <span style="font-size: 13px; color: #0071c2;"><b>Cách trung tâm 300 m</b></span>
+                        </div>
+                        <div class="tenphong-2">
+                            <span style="font-size: 13px; color: #000000;">Tọa lạc tại thành phố Hà Nội, cách Nhà Thờ Lớn 300 m, The Oriental Jade Hotel cung cấp chỗ nghỉ với nhà hàng, chỗ đỗ xe riêng, trung tâm thể dục và quán bar.</span>
+                        </div>
+                        <button class="datngay">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="top">
+        <div class="h-col-1">
+            <div class="footer-title">MÔ TẢ</div>
+            <div class="line-height">Miễn phí tính năng book phòng trực tuyến, du khách thanh toán trực tiếp trên website. Nhận thiết kế website đơn/đa khách sạn theo mẫu hoặc theo yêu cầu phù hợp đẳng cấp Hotel. Cấu trúc web chuẩn seo. Setup thanhtoán trựctuyến. Tùy biến web linh hoạt. Hỗ trợ và bảo trì 24/7. Miễn phí Bookphòng online.</div>
+        </div>
+        <div class="h-col-2">
+            <div class="footer-title">LIÊN HỆ</div>
+            <div class="h-row  h-location">
+                <div class="h-icon" ></div>
+                <div class="h-text">Học Viện KTQS - 136 HQV</div>
+            </div>
+            <div class="h-row h-email">
+                <div class="h-icon"></div>
+                <div class="h-text">hien.van.nguyen0408@gmail.com</div>
+            </div>
+            <div class="h-row h-phonenumber">
+                <div class="h-icon"></div>
+                <div class="h-text">0123456789</div>
+            </div>
+        </div>
+        <div class="h-col-3 line-height">
+            <div class="footer-title">FOLLOW US</div>
+            <div><a class="a" href="https://www.facebook.com/hien.van.nguyen0408.mta17/">Nguyễn Văn Hiến</a></div>
+            <div><a class="a" href="https://www.facebook.com/long.kieu.771">Kiều Đức Long</a></div>
+            <div><a class="a" href="https://www.facebook.com/trantrungthiep">Trần Trung Thiệp</a></div>
+            <div><a class="a" href="100009684824073">Đỗ Thành Đạt</a></div>
+
+        </div>
+    </div>
+    <div class="bottom">
+        Book-Hotel HIẾN - LONG - THIỆP - ĐẠT
+    </div>
+  </div>
+
+
+</body>
+</html>

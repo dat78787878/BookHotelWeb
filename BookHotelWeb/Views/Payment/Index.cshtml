@@ -1,0 +1,324 @@
+﻿@{
+    ViewBag.Title = "Thanh Toán";
+}
+@using BookHotelWeb.Models
+@model Payment
+
+@using (Html.BeginForm("DatPhong", "Payment"))
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="/Content/CSS/header.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="/Content/CSS/footer.css" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" href="/Content/CSS/dat.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="~/Content/JS/payment.js">
+
+        </script>
+    </head>
+    <body>
+        @{Html.RenderAction("Header", "PartView");}
+        
+        <form action="/Payment/DatPhong" method="post">
+            <div class="body" style="margin-top: 130px">
+                <span style="color:red;margin-top:10px;">@ViewBag.Mes</span>
+                <div class="container">
+                    <div class="trai">
+                        <section class="bui-card bp-card--booking-summary">
+                            <div class="bui-card__content">
+                                <header class="bui-card__header">
+                                    <h2 class="bui-card__title">Chi tiết đặt phòng của bạn</h2>
+                                </header>
+                                <div class="bui-card__text">
+                                    <div class="bui-group bui-group--large">
+                                        <div class="bui-group bui-group--large">
+                                            <div class="bui-group__item">
+                                                <div class="bui-date-range bui-date-range--large bp-date-range">
+                                                    <div class="bui-date-range__item">
+                                                        <div id="bp-checkin-date__label" class="bui-date__label">Nhận phòng</div>
+                                                        <div class="date-checkin">
+                                                            <input class="input-date" type="date" id="date1" name="RoomReserveTime" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="bui-date-range__item">
+                                                        <div id="bp-checkout-date__label" class="bui-date__label">Trả phòng</div>
+                                                        <div class="date-checkout">
+                                                            <input type="date" class="input-date" id="date2" name="PaymentTime" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="person-amount">
+                                                <span>người lớn</span>
+                                                <select class="btn-default btn-person-amount" id="person" name="Person">
+                                                    <option>1 </option>
+                                                    <option>2 </option>
+                                                    <option>3 </option>
+                                                    <option>4 </option>
+                                                    <option>5 </option>
+                                                    <option>6 </option>
+                                                </select>
+                                            </div>
+                                            <div class="child-and-room">
+                                                <span>trẻ em</span>
+                                                <select class="btn-default btn-child-amount" id="child" name="Child">
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <div class="person-amount">
+                                                <span>số lượng phòng</span>
+                                                <select class="btn-default btn-room-amount" id="amountR" name="RoomAmount">
+                                                    <option>1</option>
+                                                    <option>2 </option>
+                                                    <option>3 </option>
+                                                    <option>4 </option>
+                                                    <option>5 </option>
+                                                    <option>6 </option>
+                                                    <option>7</option>
+                                                </select>
+                                            </div>
+                                            <input class="btn btn-primary" type="button" value="Xác nhận ngày" id="btnSubmit">
+                                            <div class="bui-group__item bui-group bui-group--small">
+                                                <div class="bui-group__item bui-f-font-emphasized">Tổng thời gian lưu trú:</div>
+                                                <div class="bui-group__item bui-f-font-strong" id="day"></div>
+                                            </div>
+                                            <div class="bui-group__item bui-group bui-group--small">
+                                                <div class="bui-group__item bui-f-font-emphasized">Tổng số người:</div>
+                                                <div class="bui-group__item bui-f-font-strong" id="people" name="PeopleAmount"></div>
+                                            </div>
+                                        </div>
+                                        <hr class="bui-divider">
+                                        <div class="bui-group bui-group--large">
+                                            <div class="bui-group__item">
+                                                <div class="bui-group bui-group--small">
+                                                    <div class="bui-f-font-strong">Bạn đã chọn:</div>
+                                                    <ul class="bui-list bui-list--text bp-list--compact">
+                                                        <li class="bui-list__item">
+                                                            <div>
+                                                                @ViewBag.RoomName
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="bp_pricedetails_holder bp_pricedetails_legibility bui-group bui-group--large" data-hotel-currency-code="VND" data-user-currency-code="USD" data-is-us-breakdown="false" data-component="bp/price-details">
+                            <div class="bui-card-group">
+                                <section class="bui-card bp-card--price-details js-price-details e2e-price-details">
+                                    <div class="bui-card__content">
+                                        <header class="bui-card__header">
+                                            <h2 class="bui-card__title">Tóm tắt giá</h2>
+                                        </header>
+                                        <div class="bui-card__text bp-price-details__breakdown-container ">
+                                            <div class="bui-group bui-group--medium">
+                                                <div class="bui-group__item">
+                                                    <ul class="bp-price-details__charges">
+                                                        <li class="bp-price-details__charge-line">
+                                                            <div class="bp-price-details__charge-type">
+                                                                <div class="bp-price-details__charge-name" name="RoomName">@ViewBag.RoomName </div>
+                                                                <div>VND</div>
+                                                            </div>
+                                                            <div class="bp-price-details__charge-value" id="price">@ViewBag.Price</div>
+                                                            <div class="bp-price-details__charge-value an" id="price1">@ViewBag.Price</div>
+                                                        </li>
+                                                        <li class="bp-price-details__charge-line">
+                                                            <div class="bp-price-details__charge-type" data-pb-ix="5">10 % Thuế GTGT</div>   <div>VND</div>
+                                                            <div class="bp-price-details__charge-value" id="vat">@ViewBag.Vat </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bui-card__text bp-price-details__total">
+                                            <div class="bui-group bui-group--large">
+                                                <div class="bui-group__item">
+                                                    <div class="bui-group bui-group--medium">
+                                                        <div class="bui-group__item">
+                                                            <div class="bp-price-details__total-line bp-price-details__total-line--property js-price-details__total-line--property e2e-price-details__total-line--property">
+                                                                <div class="bp-price-details__charge-type">
+                                                                    <div class="bp-price-details__charge-name">Tiền tệ của chỗ nghỉ</div>
+                                                                    <div>VND</div>
+                                                                </div>
+                                                                <div class="bp-price-details__charge-value e2e-price-details__total-charge--property">
+                                                                    <input id="total" name="TotalMoney" value="" readonly />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bp-price-details__price-clarification bp-price-details__price-clarification--different-currency">(cho tất cả các khách)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phai">
+                        <div class="bui-card bui-u-bleed@small bui-card--fill bui-spacer--large js-property-details__container bp-card--transparent e2e-property-details">
+                            <div class="bui-card__content">
+                                <div class="bui-group">
+                                    <div class="bui-inline-container">
+                                        <div class="bui-inline-container__start">
+                                            <div class="bp-property-details__image-container">
+                                                <img class="bp-property-details__image js-property-details__image" src="@ViewBag.SourceImageHotel/@ViewBag.CoverImage" alt="" width="200" height="200" aria-hidden="true">
+                                                <div class="bp-property-details__review-score-container">
+                                                    <div class="bui-review-score c-score"> <div class="bui-review-score__badge" aria-label="Đạt điểm @ViewBag.Evaluate"> @ViewBag.Evaluate </div> <div class="bui-review-score__content"> <div class="bui-review-score__title"> Rất tốt </div> </div> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bui-inline-container__main">
+                                            <div class="bui-group js-property-details__info">
+                                                <div class="bui-group bui-group--small">
+                                                    <h1 class="bui-f-font-display_two js-property-details__name">@ViewBag.NameHotel</h1>
+                                                    <div class="bui-f-font-body bui-group bui-group--inline bui-group--small">
+                                                        <span class="nowrap">
+                                                            <span class="c-accommodation-classification-rating">
+                                                                <span class="c-accommodation-classification-rating__badge c-accommodation-classification-rating__badge--tiles c-accommodation-classification-rating__badge--with-tooltip" data-component="accommodation-classification-rating" title="">
+                                                                    <span class="bui-rating bui-rating--smaller" role="img" aria-label="3 out of 5">
+                                                                        @for (int i = 0; i < 5; i++)
+                                                                        {
+                                                                            <span aria-hidden="true" class="bui-icon bui-rating__item bui-icon--medium" role="presentation">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 128" focusable="false" aria-hidden="true" role="img">
+                                                                                    <path d="M96 8H16A16 16 0 0 0 0 24v96h96a16 16 0 0 0 16-16V24A16 16 0 0 0 96 8zM56 88a24 24 0 1 1 24-24 24 24 0 0 1-24 24z"></path>
+                                                                                </svg>
+                                                                            </span>
+                                                                        }
+                                                                    </span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <div class="bui-group__item">
+                                                            <div class="bui-group__item">
+                                                                <span class="bui-badge bui-badge--outline">
+                                                                    <svg aria-hidden="true" class="bk-icon -streamline-transport_shuttle bp-bui-badge__icon" fill="currentColor" focusable="false" height="14" width="14" viewBox="0 0 128 128" role="presentation"><path d="M108.42 55.84H44.26a9 9 0 0 0-8.94 8.94v20.67H19.58a9 9 0 0 0-8.93 8.94v14.8a9 9 0 0 0 8.93 8.94h6.47c2.2 7.332 9.928 11.491 17.26 9.291a13.861 13.861 0 0 0 9.29-9.291h22.8c2.2 7.332 9.928 11.491 17.26 9.291a13.861 13.861 0 0 0 9.29-9.291h1.53c7.658-.006 13.864-6.212 13.87-13.87V64.78a9 9 0 0 0-8.93-8.94zm.93 8.94v20.67H92.68V63.84h15.74a.94.94 0 0 1 .93.94zM68 85.45V63.84h16.68v21.61zM44.26 63.84H60v21.61H43.32V64.78c0-.52.42-.94.94-.94zM39.32 120a5.87 5.87 0 1 1 5.87-5.87 5.88 5.88 0 0 1-5.87 5.87zm49.36 0a5.87 5.87 0 1 1 5.87-5.87 5.87 5.87 0 0 1-5.87 5.87zm14.8-9.87H102c-2.2-7.332-9.928-11.491-17.26-9.291a13.861 13.861 0 0 0-9.29 9.291H52.6c-2.2-7.332-9.928-11.491-17.26-9.291a13.861 13.861 0 0 0-9.29 9.291h-6.47a.94.94 0 0 1-.93-.94v-14.8a.94.94 0 0 1 .93-.94h89.77v10.81a5.87 5.87 0 0 1-5.87 5.87zm-92.29-82a4 4 0 0 1 5.467-1.451l.003.001 6.69 3.88 12.33-6-13.79-8a4 4 0 0 1 4-6.91l18.4 10.73 13.07-6.4a4.003 4.003 0 1 1 3.52 7.19l-36 17.6a4 4 0 0 1-3.76-.13l-8.54-5a4 4 0 0 1-1.39-5.52z"></path></svg>
+                                                                    Xe đưa đón sân bay
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bui-group__item">
+                                                            <span class="bui-badge bui-badge--outline">
+                                                                <svg aria-hidden="true" class="bk-icon -streamline-parking_sign bp-bui-badge__icon" fill="currentColor" focusable="false" height="14" width="14" viewBox="0 0 24 24" role="presentation"><path d="M22.5 12c0 5.799-4.701 10.5-10.5 10.5S1.5 17.799 1.5 12 6.201 1.5 12 1.5 22.5 6.201 22.5 12zm1.5 0c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12zm-9.75-1.5a1.5 1.5 0 0 1-1.5 1.5H10.5l.75.75v-4.5L10.5 9h2.25a1.5 1.5 0 0 1 1.5 1.5zm1.5 0a3 3 0 0 0-3-3H10.5a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h2.25a3 3 0 0 0 3-3zm-4.5 6.75v-4.5a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 1.5 0z"></path></svg>
+                                                                Chỗ đỗ xe
+                                                            </span>
+                                                        </div>
+                                                        <div class="bui-group__item">
+                                                            <span class="bui-badge bui-badge--outline">
+                                                                <svg aria-hidden="true" class="bk-icon -streamline-food bp-bui-badge__icon" fill="currentColor" focusable="false" height="14" width="14" viewBox="0 0 24 24" role="presentation"><path d="M5.999.75v22.5a.75.75 0 0 0 1.5 0V.75a.75.75 0 0 0-1.5 0zm3 0V7.5a2.259 2.259 0 0 1-2.252 2.25 2.258 2.258 0 0 1-2.248-2.252V.75a.75.75 0 0 0-1.5 0V7.5a3.76 3.76 0 0 0 3.748 3.75 3.76 3.76 0 0 0 3.752-3.748V.75a.75.75 0 0 0-1.5 0zm6.75 15.75h3c1.183.046 2.203-.9 2.25-2.111a2.22 2.22 0 0 0 0-.168c-.25-6.672-.828-9.78-3.231-13.533a1.508 1.508 0 0 0-2.77.81V23.25a.75.75 0 0 0 1.5 0V1.503c0 .003.001 0 .003 0a.006.006 0 0 1 .008.002c2.21 3.45 2.75 6.354 2.99 12.773v.053a.696.696 0 0 1-.721.67L15.749 15a.75.75 0 0 0 0 1.5z"></path></svg>
+                                                                1 nhà hàng trong khuôn viên
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bui-inline-container">
+                                                        <div class="bui-inline-container__start">
+                                                            <svg class="bk-icon -streamline-geo_pin" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><path d="M15 8.25a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm1.5 0a4.5 4.5 0 1 0-9 0 4.5 4.5 0 0 0 9 0zM12 1.5a6.75 6.75 0 0 1 6.75 6.75c0 2.537-3.537 9.406-6.75 14.25-3.214-4.844-6.75-11.713-6.75-14.25A6.75 6.75 0 0 1 12 1.5zM12 0a8.25 8.25 0 0 0-8.25 8.25c0 2.965 3.594 9.945 7 15.08a1.5 1.5 0 0 0 2.5 0c3.406-5.135 7-12.115 7-15.08A8.25 8.25 0 0 0 12 0z"></path></svg>
+                                                        </div>
+                                                        <div class="bui-inline-container__main">
+                                                            <span class="js-property-details__address-text e2e-property-details__address-text">
+                                                                @ViewBag.HotelAddress
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bui-alert bp-alert-temp bui-alert--inline bui-alert--success" role="status">
+                                                    <span class="bui-alert__icon">
+                                                        <svg class="bk-icon -streamline-checkmark" height="24" width="24" viewBox="0 0 128 128" role="presentation" aria-hidden="true" focusable="false"><path d="M56.33 100a4 4 0 0 1-2.82-1.16L20.68 66.12a4 4 0 1 1 5.64-5.65l29.57 29.46 45.42-60.33a4 4 0 1 1 6.38 4.8l-48.17 64a4 4 0 0 1-2.91 1.6z"></path></svg>
+                                                    </span>
+                                                    <div class="bui-alert__description">
+                                                        <div class="bui-alert__text">Chỗ ở này có vị trí tuyệt vời. Khách đã cho điểm @ViewBag.Evaluate!</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="bp-unit-group">
+                            <div class="bp-facility-reassurance bpfr_rel ">
+                                <div class="bp-unit__container bp_form_box__content bp_form_box__content--pad js-unit__container" data-component="bp/room" data-room-id="584830111_248249551_2_0_0" data-room-sequencial-id="1">
+                                    <div class="room-details-description">
+                                        <div class="room-details-room-name">
+                                            <p class="room-name room-name--name-prominent ">
+                                                <ins class="room-name-pure" tabindex="0">@ViewBag.RoomName</ins>
+                                            </p>
+                                            <div data-et-view="eWHMaFAWQNESMQMLefKSCQDEAOPSFTBNFecMEO:1"></div>
+                                            <ul class="bui-group bui-group--inline bui-group--small bui-list bui-list--text bui-spacer--large">
+                                                @foreach (var info in ViewBag.RoomInformation)
+                                                {
+                                                    <li class="bui-group__item" data-name-en="Balcony">
+                                                        <span class=" bui-badge bui-badge--constructive bp-bui-badge"><svg class="bk-icon -streamline-resort" height="14" width="14" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><path d="M.768 11.413l1.5 6.75a.75.75 0 0 0 1.464-.326l-1.5-6.75a.75.75 0 0 0-1.464.326zM2.22 23.456l1.5-5.25L3 18.75h3a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 0 1.5 0V19.5A2.25 2.25 0 0 0 6 17.25H3a.75.75 0 0 0-.721.544l-1.5 5.25a.75.75 0 1 0 1.442.412zm19.547-12.369l-1.5 6.75a.75.75 0 1 0 1.464.326l1.5-6.75a.75.75 0 1 0-1.464-.326zm1.453 11.957l-1.5-5.25A.75.75 0 0 0 21 17.25h-3a2.25 2.25 0 0 0-2.25 2.25v3.75a.75.75 0 0 0 1.5 0V19.5a.75.75 0 0 1 .75-.75h3l-.721-.544 1.5 5.25a.75.75 0 1 0 1.442-.412zM11.25 6.75v16.5a.75.75 0 0 0 1.5 0V6.75a.75.75 0 0 0-1.5 0zm-4.5 7.5h10.5a.75.75 0 0 0 0-1.5H6.75a.75.75 0 0 0 0 1.5zM1.5 6l10.064-4.37c.297-.161.575-.161.803-.033l10.178 4.425L22.5 6H1.5zm0 1.5h21a1.5 1.5 0 0 0 .689-2.832L13.034.255c-.616-.35-1.452-.35-2.136.034L.858 4.646c-.544.28-.856.792-.857 1.352A1.5 1.5 0 0 0 1.499 7.5z"></path></svg>@info</span>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </div>
+                                        <div class="bp_room_details_holder  ">
+                                            <div class="max-persons-details">
+                                                <label for="nr_guests_584830111_248249551_2_0_0" class="room-detail-label"><strong>Số người tối đa: @ViewBag.MaxPerson</strong></label>
+                                                <span class="jq_tooltip with_kids">
+                                                    <span class="occupancy_adults">
+                                                        @for (int i = 0; i < ViewBag.MaxPerson; i++)
+                                                        {
+                                                            <svg class="bk-icon -streamline-person_half" height="16" width="16" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false"><path d="M16.5 6a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0zM18 6A6 6 0 1 0 6 6a6 6 0 0 0 12 0zM3 23.25a9 9 0 1 1 18 0 .75.75 0 0 0 1.5 0c0-5.799-4.701-10.5-10.5-10.5S1.5 17.451 1.5 23.25a.75.75 0 0 0 1.5 0z"></path></svg>
+                                                        }
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bui-group bui-spacer--large">
+                                <div class="bui-group bui-button-group bui-group--vertical-align-middle bui-group--inline bui-group--align-end ">
+                                    <div class="bui-group__item">
+                                        <button class="bui-button bui-button--primary bui-button--large js-bp-submit-button--next-step e2e-bp-submit-button--next-step bp-button an" type="submit" name="book" value="DatPhong" id="btnSubmit1">
+                                            <span class="bui-button__text js-button__text"> Ghi nhận </span> <span class="bui-button__icon bui-button__icon--end js-button__icon">
+                                                <svg class="bk-icon -streamline-arrow_nav_right" height="24" role="presentation" width="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.45 6c.2 0 .39.078.53.22l5 5c.208.206.323.487.32.78a1.1 1.1 0 0 1-.32.78l-5 5a.75.75 0 0 1-1.06 0 .74.74 0 0 1 0-1.06L13.64 12 8.92 7.28a.74.74 0 0 1 0-1.06.73.73 0 0 1 .53-.22zm4.47 5.72zm0 .57z"></path></svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bui-alert bp-alert-temp bui-u-bleed@small bui-alert--success" role="status">
+                            <span class="bui-alert__icon">
+                                <svg class="bk-icon -streamline-checkmark_selected" height="24" width="24" viewBox="0 0 128 128" role="presentation" aria-hidden="true" focusable="false"><path d="M56.62 93.54a4 4 0 0 1-2.83-1.18L28.4 67a4 4 0 1 1 5.65-5.65l22.13 22.1 33-44a4 4 0 1 1 6.4 4.8L59.82 91.94a4.06 4.06 0 0 1-2.92 1.59zM128 64c0-35.346-28.654-64-64-64C28.654 0 0 28.654 0 64c0 35.346 28.654 64 64 64 35.33-.039 63.961-28.67 64-64zm-8 0c0 30.928-25.072 56-56 56S8 94.928 8 64 33.072 8 64 8c30.914.033 55.967 25.086 56 56z"></path></svg>
+                            </span>
+                            <div class="bui-alert__description">
+                                <div class="bui-alert__text">
+                                    Bạn sẽ thanh toán trong thời gian lưu trú.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @{Html.RenderAction("Footer", "PartView");}
+        </form>
+    </body>
+</html>
+}

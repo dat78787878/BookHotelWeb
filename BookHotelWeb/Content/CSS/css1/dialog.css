@@ -1,0 +1,41 @@
+﻿.h-content{
+
+}
+.h-row{
+    margin-top:20px;
+}
+.h-row .h-title{
+    font-size:20px;
+    font-weight:bold;
+    width:220px;
+}
+    .h-row .input-edit {
+        height: 40px;
+        padding: 0 20px;
+        width: 1000px;
+        outline: none;
+        font-size:20px;
+        
+    }
+
+.h-submit {
+    position: absolute;
+    left: 1135px;
+    padding: 10px 30px;
+    background-color: #4e73df;
+    color: #ffffff;
+    border:none;
+    outline:none;
+    border-radius:4px;
+    margin-top:20px;
+}
+
+.text-area {
+    font-size:20px;
+    width: 1000px;
+    outline:none;
+    padding:10px 20px;
+    height:200px;
+    margin-left:5px;
+
+}

@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>a
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Content/CSS/css1/sb-admin-2.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="/Content/CSS/long.css" rel="stylesheet" />
+    <link href="/Content/CSS/header.css" rel="stylesheet" />
+    <link href="/Content/CSS/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    @{ Html.RenderAction("Header", "PartView");}
+    <div class="body" style="margin-top: 130px;">
+        <section class="cover-search">
+            <div class="title-content">
+                <h1 class="h-title-1">Tìm kiếm khách sạn</h1>
+                <p class="h-title-2">Từ khách sạn giá rẻ đến phòng sang trọng</p>
+            </div>
+            <div class="search-box">
+                <div class="search-line">
+                    <h4 class="h-title-1" style="margin-top:20px ;font-size:20px">Thành phố, địa điểm hoặc tên khách sạn</h4>
+                    
+                        @using (Html.BeginForm("Search", "Home"))
+                        {
+                            <div style="display: flex;">
+                                <input type="text" placeholder="Thành phố hoặc tên khách sạn" name="search">
+                                <input type="submit" value="Tìm kiếm khách sạn" id="btn-search">
+                            </div>
+                        }
+                    
+                </div>
+            </div>
+        </section>
+        <div class="cover-near-hotel" style="margin-top:20px">
+            <div class="title-content">
+                <h1 class="h-title-1">Những khách sạn giá hợp lí trong thành phố</h1>
+                <p class="h-title-2">Tìm ưu đãi khách sạn tuyệt vời cho đêm nay hoặc chuyến đi sắp tới</p>
+            </div>
+            <div class="row near-hotel-box h-margin-top">
+                @for (int i = 0; i < 8; i++)
+                {
+                    <div class="col-md-6 cover-hotel" style="margin-top:20px">
+                        <div><img class="hotel-image" src="@ViewBag.HotelPriceCheaps[i].CoverImage" alt="Alternate Text" /></div>
+                        <div class="content-hotel">
+                            <div class="h-row-1 h-display-flex">
+                                <h5><a href="/DetailHotel/Index/@ViewBag.HotelPriceCheaps[i].IdHotel" class="h-hotel-name">@ViewBag.HotelPriceCheaps[i].HotelName</a></h5>
+                                <span style="font-size: 21px; color:#0071c2;position:absolute;top:0px;right:20px;"><b>@ViewBag.HotelPriceCheaps[i].Evaluate<i style="color:#febb02" class="fas fa-star"></i></b></span>
+                            </div>
+                            <p style="color:#4e73df">Địa chỉ : @ViewBag.HotelPriceCheaps[i].HotelAddress</p>
+                            <h5 class="hotel-cost">1.200.000 VND</h5>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="cover-favorite-destination" style="margin-top:50px">
+            <div class="title-content">
+                <h1 class="h-title-1">Điểm đến khách sạn đang phổ biến</h1>
+                <p class="h-title-2">Khám phá các điểm đến đang được ưa chuộng bởi du khách từ Việt Nam</p>
+            </div>
+            <div class="favorite-destination-box h-box h-margin-top">
+                @foreach (var city in ViewBag.Cities)
+                {
+                    <div class="city-box">
+                        <div class="city-image">
+                            <img src="@city.CityImage" alt="Alternate Text" />
+                        </div>
+                        <h5 style="text-align:center;margin-top:20px"><a href="/HotelList/Index/@city.IdCity">THÀNH PHỐ @city.CityName</a></h5>
+                    </div>
+                }
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-xl-4" style="width: max-content;height: max-content;background-color: chartreuse;"></div>
+            </div> -->
+        </div>
+
+        <section class="top-hotel">
+            <div class="title-content">
+                <h1 class="h-title-1">Những khách sạn nổi bật</h1>
+                <p class="h-title-2">Trải nghiệm những khách sạn được yêu thích nhất</p>
+            </div>
+            <div class="top-hotel-box h-box h-margin-top">
+                @foreach (var hotel in ViewBag.Hotels)
+                {
+                    <div class="hotel-box">
+                        <div class="hotel-top-image">
+                            <img src="@hotel.Image1" alt="Alternate Text" />
+                        </div>
+                        <div style="text-align:center;">
+                            <h5 style="text-align:center;margin-top:20px"><a href="/DetailHotel/Index/@hotel.IdHotel">@hotel.HotelName</a></h5>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </section>
+    </div>
+    <div class="footer">
+        <div class="top">
+            <div class="h-col-1">
+                <div class="footer-title">MÔ TẢ</div>
+                <div class="line-height">Miễn phí tính năng book phòng trực tuyến, du khách thanh toán trực tiếp trên website. Nhận thiết kế website đơn/đa khách sạn theo mẫu hoặc theo yêu cầu phù hợp đẳng cấp Hotel. Cấu trúc web chuẩn seo. Setup thanhtoán trựctuyến. Tùy biến web linh hoạt. Hỗ trợ và bảo trì 24/7. Miễn phí Bookphòng online.</div>
+            </div>
+            <div class="h-col-2">
+                <div class="footer-title">LIÊN HỆ</div>
+                <div class="h-row  h-location">
+                    <div class="h-icon"></div>
+                    <div class="h-text">Học Viện KTQS - 136 HQV</div>
+                </div>
+                <div class="h-row h-email">
+                    <div class="h-icon"></div>
+                    <div class="h-text">hien.van.nguyen0408@gmail.com</div>
+                </div>
+                <div class="h-row h-phonenumber">
+                    <div class="h-icon"></div>
+                    <div class="h-text">0123456789</div>
+                </div>
+            </div>
+            <div class="h-col-3 line-height">
+                <div class="footer-title">FOLLOW US</div>
+                <div><a class="a" href="https://www.facebook.com/hien.van.nguyen0408.mta17/">Nguyễn Văn Hiến</a></div>
+                <div><a class="a" href="https://www.facebook.com/long.kieu.771">Kiều Đức Long</a></div>
+                <div><a class="a" href="https://www.facebook.com/trantrungthiep">Trần Trung Thiệp</a></div>
+                <div><a class="a" href="https://www.facebook.com/profile.php?id=100009684824073">Đỗ Thành Đạt</a></div>
+
+            </div>
+        </div>
+        <div class="bottom">
+            Book-Hotel HIẾN - LONG - THIỆP - ĐẠT
+        </div>
+    </div>
+    @*@{ Html.RenderAction("Footer", "PartView");}*@
+</body>
+
+</html>
+

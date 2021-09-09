@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Comment";
+}
+@using BookHotelWeb.Models
+@model List<Comment>
+
+<link href="~/Content/CSS/components/comment.css" rel="stylesheet" />
+
+<div id="comment">
+    <div class="title-comment">
+        Bình luận
+    </div>
+    @if (Session["Username"] != null)
+    {
+        <div class="textarea-comment">
+            <textarea class="text-area" id="txt-comment"></textarea>
+            <div class="row1">
+                <div class="text">Quy định đăng bình luận</div>
+                <div><button class="btn-submit" id="btn-comment">Bình luận</button></div>
+            </div>
+        </div>
+    }
+    @foreach (var comment in ViewBag.Comments)
+    {
+        <div class="comment-contents">
+            <div class="person-name">
+                <div class="character-firstName">@comment.Username[0]</div>
+                <div class="name">@comment.Username</div>
+            </div>
+            <div class="content">
+                @comment.Comment1
+            </div>
+            <div class="comment-reply">
+                <a class="a text-like" href="#">Thích</a>
+                <a class="a reply" href="#">
+                    <div class="icon"></div>
+                    <div class="text-reply">Trả lời</div>
+                </a>
+                <a href="#" class="a text-like" style="margin-left:10px;">chỉnh sửa</a>
+                <a href="#" class="a text-like" style="margin-left:10px">xóa</a>
+                <a class="a time" href="#">@comment.CommentDate</a>
+            </div>
+        </div>
+    }
+
+</div>
+<script type="text/javascript">
+    $(document).ready(() => {
+        $("#btn-comment").click(() => {
+            alert($("#txt-comment").val())
+        })
+    })
+</script>

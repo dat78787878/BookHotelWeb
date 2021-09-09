@@ -1,0 +1,32 @@
+﻿
+@import url('../CSS/components/input.css');
+@import url('../CSS/components/icon.css');
+@import url('../CSS/components/button.css');
+@import url('../CSS/components/combobox.css');
+body {
+    width: 100%;
+    /* height: 100vh; */
+    font-size: 13px;
+    margin: 0;
+    overflow:scroll;
+    display: block;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+}
+a{
+    text-decoration: none;
+}
+
+.icon svg{
+    width: 16px;
+    height: 16px;
+    
+}
+
+.li-display-flex{
+    display: flex;
+}
+
+.display-flex{
+    display:flex;
+}
